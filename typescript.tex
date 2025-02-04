@@ -1,15 +1,17 @@
 \section{Typescript}
 
-TypeScript ist eine von Microsoft entwickelte, freie und quelloffene Programmiersprache. Sie ist eine Obermenge von JavaScript und verleiht diesem eine statische Typisierung. Dies bringt eine Reihe von Vorteilen mit sich:
+\subsection{Was ist TypeScript}
 
-Frühere Fehlererkennung: Durch die statische Typisierung können Fehler bereits während der Entwicklung erkannt werden, anstatt erst zur Laufzeit. Dies führt zu einer höheren Codequalität und reduziert die Anzahl von Fehlern in der Produktion.
+Typescript (TS) ist eine von Microsoft entwickelte Erweiterung von JavaScript (JS). \cite{website_pubmed_about}
 
-Bessere Wartbarkeit: TypeScript-Code ist leichter zu verstehen und zu warten, da die Typen der Variablen und Funktionen klar definiert sind. Dies erleichtert die Zusammenarbeit im Team und die Einarbeitung neuer Entwickler.
+TS wird zu JS convertiert, wodurch der geschriebene Code in nahezu jedem Browser läuft.
+[https://www.typescriptlang.org]
 
-Höhere Produktivität: Die Typisierung hilft Entwicklern, Fehler schneller zu finden und zu beheben. Außerdem bietet TypeScript Funktionen wie Autovervollständigung und Refactoring, die die Entwicklungszeit verkürzen können.
+TS erweitert JS durch ein Typsystem in dem unter anderem Interfaces und Klassen beschrieben werden können. Dadurch reduzieren sich die möglichen Fehlerquellen enorm, da der TS-Compiler einfache Typ-Überprüfungen vollziehen kann. Desweiteren ist dadurch auch eine bessere Integration mit IDE's wie zum Beispiel VSCode gegeben.
+[https://www.typescriptlang.org]
 
-Kompatibilität mit JavaScript: TypeScript ist vollständig kompatibel mit JavaScript. Bestehender JavaScript-Code kann problemlos in TypeScript-Projekte integriert werden.
+TS ist dabei so entworfen worden, dass jeder gültige JS-Code auch gültiger TS-Code ist. Es ist also möglich ein bestehendes JS-Projekt ohne weiteres auf TS umzustellen. Anschließend kann man, wenn man möchte, den Code vorhandenen Code zu TS convertieren. Dabei hilft ein Feature von TS. Die so genannte tsconfig.json Datei enthält Einstellungen für den TS-Compiler um beispielsweise erweitertes ErrorChecking zu ermöglichen. [https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html]
 
-Zugang zu neuen Features: TypeScript unterstützt neue JavaScript-Funktionen, bevor diese von allen Browsern unterstützt werden. Dadurch können Entwickler frühzeitig auf neue Technologien zugreifen.
+\subsection{Wie haben wir Typescript genutzt?}
 
-Zusammenfassend lässt sich sagen, dass TypeScript eine lohnende Ergänzung für JavaScript-Entwickler darstellt. Es verbessert die Codequalität, Wartbarkeit und Produktivität und ermöglicht die Nutzung neuer JavaScript-Funktionen.
+Aufgrund der vielen Vorteile von 
