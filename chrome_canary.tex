@@ -1,1 +1,22 @@
-\section{Chrome Canary}
+\section{Chrome Canary und Gemini Nano}
+
+\subsection{Was ist Crome Canary}
+
+Chrome Canary ist die experimentelle Version von Googles Chrome Browser und bietet die Möglichkeit, die neuesten Funktionen zu testen. Canary kann als eine Art Labor betrachtet werden, in dem neue Ideen und Features ausprobiert werden, bevor sie in die endgültige Version von Chrome aufgenommen werden. Diese Vorabversion wird täglich aktualisiert, wodurch die neuesten Entwicklungen stets verfolgt werden können. Da es sich jedoch um eine experimentelle Version handelt, kann es vorkommen, dass Canary instabil ist oder Fehler aufweist. \cite{chrome-canary}
+
+\subsection{Gemini Nano}
+
+Gemini Nano ist ein von Google entwickeltes Sprachmodell \cite{gemini-nano}. Der Hauptzweck von Gemini Nano ist es, KI Funktionen clientseitig ausführen zu können, ohne dafür jedesmal ein Sprachmodell herunterladen zu müssen. Dazu wurde Gemini Nano direkt in Chrome (Canary) integriert. \cite{gemini-nano-build-in-ai}
+
+Aktuell befinden sich Gemini Nano und die dazugehörige API in einer Testphase. In diesem Zustand können und haben sich \footnote{Wie wir mehrfach während der Entwicklung unseres Plugins feststellen mussten} deren Funktionen geändert. \cite{gemini-nano-build-in-ai}
+
+Die Gemini API ist in verschiedene Task API's aufgeteilt. Aktuell sind dies \cite{gemini-nano-apis}:
+\begin{itemize}
+    \item LanguageDetection
+    \item Translation
+    \item Summary
+    \item Writer + Rewriter
+    \item PromptApi \footnote{Unser Plugin stützt sich letzlich auf die PromptApi, auch wenn wir zwischendurch die anderen API's ausprobiert haben.}
+\end{itemize} 
+
+Um diese API's nutzen zu können sollte man dem Origin Trial beiteten. Dies geht über \cite{gemini-nano-origin-trial}. Hier erhiehlten wir die jeweils neuesten Informationen via Email. Dies war notwendig, da die öffentlich zugängliche Dokumentation seit längerer Zeit nicht mehr aktuell ist (Stand 04.02.2025).

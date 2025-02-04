@@ -8,4 +8,3 @@ rm *.log
 rm *.gz
 rm *.toc
 rm *.out
-rm *.pdf
