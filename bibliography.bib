@@ -1,0 +1,456 @@
+@article{Lee2020,
+  author          = {Lee, Jinhyuk and Yoon, Wonjin and Kim, Sungdong and Kim, Donghyeon and Kim, Sunkyu and So, Chan Ho and Kang, Jaewoo},
+  journal         = {Bioinformatics (Oxford, England)},
+  title           = {{BioBERT: a pre-trained biomedical language representation model for biomedical text mining.}},
+  year            = {2020},
+  issn            = {1367-4811},
+  month           = feb,
+  pages           = {1234--1240},
+  volume          = {36},
+  abstract        = {Biomedical text mining is becoming increasingly important as the number of biomedical documents rapidly grows. With the progress in natural language processing (NLP), extracting valuable information from biomedical literature has gained popularity among researchers, and deep learning has boosted the development of effective biomedical text mining models. However, directly applying the advancements in NLP to biomedical text mining often yields unsatisfactory results due to a word distribution shift from general domain corpora to biomedical corpora. In this article, we investigate how the recently introduced pre-trained language model BERT can be adapted for biomedical corpora. We introduce BioBERT (Bidirectional Encoder Representations from Transformers for Biomedical Text Mining), which is a domain-specific language representation model pre-trained on large-scale biomedical corpora. With almost the same architecture across tasks, BioBERT largely outperforms BERT and previous state-of-the-art models in a variety of biomedical text mining tasks when pre-trained on biomedical corpora. While BERT obtains performance comparable to that of previous state-of-the-art models, BioBERT significantly outperforms them on the following three representative biomedical text mining tasks: biomedical named entity recognition (0.62% F1 score improvement), biomedical relation extraction (2.80% F1 score improvement) and biomedical question answering (12.24% MRR improvement). Our analysis results show that pre-training BERT on biomedical corpora helps it to understand complex biomedical texts. We make the pre-trained weights of BioBERT freely available at https://github.com/naver/biobert-pretrained, and the source code for fine-tuning BioBERT available at https://github.com/dmis-lab/biobert.},
+  citation-subset = {IM},
+  completed       = {2020-09-17},
+  country         = {England},
+  doi             = {10.1093/bioinformatics/btz682},
+  issn-linking    = {1367-4803},
+  issue           = {4},
+  keywords        = {Data Mining; Language; Natural Language Processing; Software},
+  nlm-id          = {9808944},
+  owner           = {NLM},
+  pii             = {5566506},
+  pmc             = {PMC7703786},
+  pmid            = {31501885},
+  pubmodel        = {Print},
+  pubstate        = {ppublish},
+  revised         = {2020-12-08}
+}
+
+@misc{website_medline_overview,
+  howpublished = {\url{https://www.nlm.nih.gov/medline/medline_overview.html}},
+  month        = may,
+  title        = {{MEDLINE Overview}},
+  year         = {2024},
+  comment      = {- MEDLINE Enthält über 31 Millionen Einträge
+                  
+                  - Medline ist eine primäre Komponente von PubMed
+                  
+                  - Einträge sind mit Medical Subject Headings (MeSH) indiziert
+                  
+                  - Die in Medline enthaltene Literatur umfasst Werke von 1966 bis heute.
+                  
+                  - Die Zitate stammen aus über 5200 Zeitschriften weltweit in über 40 Sprachen
+                  
+                  + Der Themenbereich von Medline umfasst Biomedizin, Gesundheit und verwandte Bereiche
+                  
+                  + Auf Medline kann kostenlos und ohne Registrierung via PubMed zugegriffen werden.
+                  
+                  + Viele der Zitate enthalten einen Link auf den Volltext, der in PubMedCentral oder auf der Webseite des Verfassers gespeichert ist.},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://www.nlm.nih.gov/medline/medline_overview.html}
+}
+
+@misc{website_pubmed_about,
+  howpublished = {\url{https://pubmed.ncbi.nlm.nih.gov/about/}},
+  month        = may,
+  title        = {{About - PubMed}},
+  year         = {2024},
+  comment      = {- PubMed ist eine medizinische Literaturdatenbank.
+                  - Sie enthält aktuell über 37 Millionen Einträge.
+                  - Sie ist seit 1996 für die Öffentlichkeit frei verfügbar.
+                  - Betrieben wird PubMed von der National Library of Medizine in den USA.
+                  - PubMed setzt sich im wesentlichen aus drei Teilen zusammen (MEDLINE, PubMedCentral, Bookshelf)
+                  - MEDLINE enthält ausgewählte Zitate aus Zeitschriften, Tags (MeSh) und weitere Metadaten
+                  - PubMed Central enthält Volltexte ausgewählter Artikel
+                  - Bookshelf enthält Volltexte ausgewählter Bücher},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://pubmed.ncbi.nlm.nih.gov/about/}
+}
+
+@misc{website_journal_selection_for_medline,
+  howpublished = {\url{https://www.nlm.nih.gov/medline/medline_journal_selection.html}},
+  month        = may,
+  title        = {{Journal Selection for MEDLINE}},
+  year         = {2024},
+  comment      = {+ Ein Kommitee aus mehreren Wissenschaftlern und Bibliothekaren begutachtet jede Zeitschrift, welche in PubMed aufgenommen werden möchte.
+                  
+                  + Die Zeitschriften werden nach strengen Kriterien in einem längeren Prozess bewertet um die Qualität der Artikel in PubMed zu sichern.},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://www.nlm.nih.gov/medline/medline_journal_selection.html}
+}
+
+@misc{website_Medical_Subject_Headings,
+  howpublished = {\url{https://www.nlm.nih.gov/mesh/meshhome.html}},
+  month        = may,
+  title        = {{Medical Subject Headings}},
+  year         = {2024},
+  comment      = {- Medical Subject Headings (MeSH) sind ein hierarchisch organisiertes Vokabular, welches vom der National Library of Medicine erstellt werden.},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://www.nlm.nih.gov/mesh/meshhome.html}
+}
+
+@misc{website_mesh_browser,
+  howpublished = {\url{https://meshb.nlm.nih.gov/treeView}},
+  month        = may,
+  title        = {{Mesh Browser}},
+  year         = {2024},
+  comment      = {+ Es gibt eine Baumstruktur für MeSh-Begriffe, in der man gezielt nach bestimmten Themen suchen kann.
+                  
+                  + Außerdem gibt es auch eine Suchleiste in der man beliebige MeSH begriffe direkt eintippen kann.
+                  
+                  + Es ist möglich einen Abstract hochzuladen, der dann automatisch mit den entsprechenden MeSh Begriffen versehen wird.},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://meshb.nlm.nih.gov/treeView}
+}
+
+@misc{website_about_pmc,
+  howpublished = {\url{https://www.ncbi.nlm.nih.gov/pmc/about/intro/}},
+  month        = may,
+  title        = {{About PMC}},
+  year         = {2024},
+  comment      = {- PubMedCentral ist ein frei-verfügbares Volltextarchiv von biomedizinischen und Life-Science Zeitschriften.
+                  - Es wird von der National Library of Medicine (USA) betrieben.
+                  - seit 2000 öffentlich
+                  - über 9 Millionen Volltext-Artikel
+                  - verwendet XML um Artikel zu speichern (genauer  NISO Z39.96-2015 JATS XML)
+                  + Die Anzahl der Zugriffe auf PMC stieg in den letzten Jahren kontinuierlich an (Tabelle auf der Seite)},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://www.ncbi.nlm.nih.gov/pmc/about/intro/}
+}
+
+@misc{website_oa_web_service_api,
+  howpublished = {\url{https://www.ncbi.nlm.nih.gov/pmc/tools/oa-service/}},
+  month        = may,
+  title        = {{OA Web Service API}},
+  year         = {2024},
+  comment      = {- Die API ermöglicht es downloadbare Resourcen zu suchen.
+                  
+                  - Resourcen können dann vom FTP Server heruntergeladen werden.},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://www.ncbi.nlm.nih.gov/pmc/tools/oa-service/}
+}
+
+@misc{website_PMCArticle_Datasets,
+  howpublished = {\url{https://www.ncbi.nlm.nih.gov/pmc/tools/textmining/}},
+  month        = may,
+  title        = {{PMC Article Datasets}},
+  year         = {2024},
+  comment      = {+ Artikel und wissenschaftliche Publikationen sind auf der Seite https://www.ncbi.nlm.nih.gov/pmc/tools/textmining/ zum Download verfügbar.},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://www.ncbi.nlm.nih.gov/pmc/tools/textmining/}
+}
+
+@misc{website_standardized_xml_for_articles,
+  howpublished = {\url{https://www.niso.org/standards-committees/jats?}},
+  month        = may,
+  title        = {{Standardized Markup for Journal Articles}},
+  year         = {2024},
+  comment      = {+ Wurde ursprünglich von der National Library of Medicine (USA) entwickelt.},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  url          = {https://www.niso.org/standards-committees/jats?}
+}
+
+@misc{website_pubchem,
+  howpublished = {\url{https://pubchem.ncbi.nlm.nih.gov}},
+  month        = may,
+  title        = {{PubChem}},
+  year         = {2024},
+  comment      = {- PubChem ist die größte Sammlung frei-verfügbarer chemischer Informationen.
+                  + Es gibt vielfältige Suchmöglichkeiten (Name, Formel, Struktur, ...)
+                  + Die Datenbank bietet zahlreiche Informationen zu den Eigenschaften der Chemikalien, sowie Literatur an.},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://pubchem.ncbi.nlm.nih.gov}
+}
+
+@misc{website_pubmed_online_training,
+  howpublished = {\url{https://learn.nlm.nih.gov/documentation/training-packets/T0042010P/}},
+  month        = may,
+  title        = {{PubMed Online Training}},
+  year         = {2024},
+  comment      = {+ Es gibt zahlreiche Tutorials zu PubMed auf der Seite https://learn.nlm.nih.gov/documentation/training-packets/T0042010P/},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://learn.nlm.nih.gov/documentation/training-packets/T0042010P/}
+}
+
+@misc{website_content_of_pubmed,
+  howpublished = {\url{https://www.nlm.nih.gov/oet/ed/pubmed/quicktours/whatsin/index.html}},
+  month        = may,
+  title        = {{What is in PubMed}},
+  year         = {2024},
+  comment      = {- Die Datenbank wächst täglich
+                  
+                  + environmental health, social sciences, microbiology, genetics, chemistry, physics
+                  
+                  - Zeitschriften werden nach folgenden Kriterien bewertet: scientific rigor, editorial policies and processes, enforcement of ethics policies, production and administration, impact
+                  
+                  + Forschungsberichte die vom NIH finanziert wurden befinden sich ebenso in PubMedCentral
+                  
+                  + PubMed bietet Zugang zu seinen Daten für},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-20},
+  url          = {https://www.nlm.nih.gov/oet/ed/pubmed/quicktours/whatsin/index.html}
+}
+
+@misc{website_advantages_of_pubmed_over_medline,
+  howpublished = {\url{https://www.nlm.nih.gov/bsd/difference.html}},
+  month        = may,
+  title        = {{Differences MEDLINE, PubMed, and PMC}},
+  year         = {2024},
+  comment      = {+ PubMed findet auch Artikel die noch nicht mit MeSh indiziert sind
+                  + Artikel aus Randgebieten (z.B. Physik)
+                  + Manuscripte von NIH Forschern
+                  + Bücher},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-22},
+  url          = {https://www.nlm.nih.gov/bsd/difference.html}
+}
+
+@misc{website_pubmed_eutilities_introduction,
+  howpublished = {\url{https://www.ncbi.nlm.nih.gov/books/NBK25497/}},
+  month        = may,
+  title        = {{A General Introduction to the E-utilities}},
+  year         = {2024},
+  comment      = {+ Die E-Utilities sind neun Serverseitige Programme, welche Zugriff auf Informationen aus 38 Datenbanken der des National Center for Biology bieten.
+                  
+                  + Um Daten zu erhalten, ruft man einfach eine URL mit einer festen Syntax auf.
+                  
+                  + Das Ergebnis diese Aufrufs erhält man anschließend im XML-Format.
+                  
+                  + Alle Aufrufe beginnen wie folgt <https://eutils.ncbi.nlm.nih.gov/entrez/eutils/>
+                  
+                  + Erlaubt sind drei Aufrufe pro Sekunde für nicht registrierte Benutzer.
+                  
+                  + Registrierte Benutzer erhalten einen API-Key mit dem bis zu zehn Aufrufe pro Sekunde möglich sind.
+                  
+                  + Es ist möglich mehrere Resourcen auf einmal mit nur einem Request herunterzuladen.
+                  
+                  + Die neun E-Utilities sind
+                  - EInfo (database statistics)
+                  - ESearch(text search)
+                  - EPost (UID uploads)
+                  - ESummary (document summary downloads)
+                  - EFetch (data record downloads)
+                  - ELink (Entrez links)
+                  - EGQuery (number of matching queries)
+                  - ESpell (spelling suggestions)
+                  - ECitMatch (input citation strings -> PubMedId's)},
+  priority     = {prio1},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-22},
+  url          = {https://www.ncbi.nlm.nih.gov/books/NBK25497/}
+}
+
+@misc{website_eutilities_quickstart,
+  howpublished = {\url{https://www.ncbi.nlm.nih.gov/books/NBK25500/#chapter1.Demonstration_Programs}},
+  month        = may,
+  title        = {{E-Utilities Quickstart}},
+  year         = {2024},
+  comment      = {+ Beispiel:  *(ESearch)* *Get the PubMed IDs (PMIDs) for articles about breast cancer published in Science in 2008, and store them on the Entrez history server for later use*
+                  [https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed\&term=science\[journal\]+AND+breast+cancer+AND+2008\[pdat\]\&usehistory=y](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science%5bjournal%5d+AND+breast+cancer+AND+2008%5bpdat%5d&usehistory=y)
+                  
+                  + Beispiel: *(ESummary)* 
+                  [https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=19008416](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=19008416)
+                  
+                  + Beispiel: *(EFetch)* [https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=19008416](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=19008416)},
+  readstatus   = {skimmed},
+  timestamp    = {2024-05-22},
+  url          = {https://www.ncbi.nlm.nih.gov/books/NBK25500/#chapter1.Demonstration_Programs}
+}
+
+@misc{website_pubmed_search_result_biobert,
+  howpublished = {\url{https://pubmed.ncbi.nlm.nih.gov/31501885/}},
+  month        = may,
+  title        = {{BioBert at PubMed}},
+  year         = {2024},
+  comment      = {Man sieht
+                  - den Titel
+                  - die Autoren
+                  - deren Institute
+                  - den Abstract
+                  - Anhänge wie zum Beispiel Bilder
+                  - ähnliche Artikel
+                  - ausgehende Zitate
+                  - eingehende Zitate
+                  - MeSh Begriffe},
+  timestamp    = {2024-05-22},
+  url          = {https://pubmed.ncbi.nlm.nih.gov/31501885/}
+}
+
+@inproceedings{devlin-etal-2019-bert,
+  author    = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  booktitle = {Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)},
+  title     = {{BERT}: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  year      = {2019},
+  address   = {Minneapolis, Minnesota},
+  editor    = {Burstein, Jill and Doran, Christy and Solorio, Thamar},
+  month     = jun,
+  pages     = {4171--4186},
+  publisher = {Association for Computational Linguistics},
+  abstract  = {We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5 (7.7 point absolute improvement), MultiNLI accuracy to 86.7{\%} (4.6{\%} absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).},
+  comment   = {-trainiert auf},
+  doi       = {10.18653/v1/N19-1423},
+  url       = {https://aclanthology.org/N19-1423}
+}
+
+@inproceedings{peters-etal-2018-deep,
+  author    = {Peters, Matthew E.  and
+               Neumann, Mark  and
+               Iyyer, Mohit  and
+               Gardner, Matt  and
+               Clark, Christopher  and
+               Lee, Kenton  and
+               Zettlemoyer, Luke},
+  booktitle = {Proceedings of the 2018 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers)},
+  title     = {Deep Contextualized Word Representations},
+  year      = {2018},
+  address   = {New Orleans, Louisiana},
+  editor    = {Walker, Marilyn  and
+               Ji, Heng  and
+               Stent, Amanda},
+  month     = jun,
+  pages     = {2227--2237},
+  publisher = {Association for Computational Linguistics},
+  abstract  = {We introduce a new type of deep contextualized word representation that models both (1) complex characteristics of word use (e.g., syntax and semantics), and (2) how these uses vary across linguistic contexts (i.e., to model polysemy). Our word vectors are learned functions of the internal states of a deep bidirectional language model (biLM), which is pre-trained on a large text corpus. We show that these representations can be easily added to existing models and significantly improve the state of the art across six challenging NLP problems, including question answering, textual entailment and sentiment analysis. We also present an analysis showing that exposing the deep internals of the pre-trained network is crucial, allowing downstream models to mix different types of semi-supervision signals.},
+  doi       = {10.18653/v1/N18-1202},
+  url       = {https://aclanthology.org/N18-1202}
+}
+
+@article{Habibi2017,
+  author          = {Habibi, Maryam and Weber, Leon and Neves, Mariana and Wiegandt, David Luis and Leser, Ulf},
+  journal         = {Bioinformatics (Oxford, England)},
+  title           = {Deep learning with word embeddings improves biomedical named entity recognition.},
+  year            = {2017},
+  issn            = {1367-4811},
+  month           = jul,
+  pages           = {i37--i48},
+  volume          = {33},
+  abstract        = {Text mining has become an important tool for biomedical research. The most fundamental text-mining task is the recognition of biomedical named entities (NER), such as genes, chemicals and diseases. Current NER methods rely on pre-defined features which try to capture the specific surface properties of entity types, properties of the typical local context, background knowledge, and linguistic information. State-of-the-art tools are entity-specific, as dictionaries and empirically optimal feature sets differ between entity types, which makes their development costly. Furthermore, features are often optimized for a specific gold standard corpus, which makes extrapolation of quality measures difficult. We show that a completely generic method based on deep learning and statistical word embeddings [called long short-term memory network-conditional random field (LSTM-CRF)] outperforms state-of-the-art entity-specific NER tools, and often by a large margin. To this end, we compared the performance of LSTM-CRF on 33 data sets covering five different entity classes with that of best-of-class NER tools and an entity-agnostic CRF implementation. On average, F1-score of LSTM-CRF is 5% above that of the baselines, mostly due to a sharp increase in recall. The source code for LSTM-CRF is available at https://github.com/glample/tagger and the links to the corpora are available at https://corposaurus.github.io/corpora/ . habibima@informatik.hu-berlin.de.},
+  citation-subset = {IM},
+  completed       = {2018-04-06},
+  country         = {England},
+  doi             = {10.1093/bioinformatics/btx228},
+  issn-linking    = {1367-4803},
+  issue           = {14},
+  keywords        = {Animals; Data Mining, methods; Humans; Machine Learning; Mice; Software},
+  nlm-id          = {9808944},
+  owner           = {NLM},
+  pii             = {3953940},
+  pmc             = {PMC5870729},
+  pmid            = {28881963},
+  pubmodel        = {Print},
+  pubstate        = {ppublish},
+  revised         = {2023-11-12}
+}
+
+@inproceedings{mikolov2013distributed,
+  title        = {Distributed representations of words and phrases and their compositionality},
+  author       = {Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S. and Dean, Jeff},
+  booktitle    = {Advances in Neural Information Processing Systems},
+  editor       = {Burges, C.J.C.},
+  volume       = {26},
+  organization = {Curran Associates, Inc.},
+  pages        = {3111--3119},
+  year         = {2013},
+  url          = {https://proceedings.neurips.cc/paper_files/paper/2013/file/9aa42b31882ec039965f3c4923ce901b-Paper.pdf}
+}
+
+@article{Bhasuran2018,
+  title   = {Automatic extraction of gene-disease associations from literature using joint ensemble learning},
+  author  = {Bhasuran, B and Natarajan, J},
+  journal = {PLoS One},
+  year    = {2018},
+  volume  = {13},
+  number  = {7},
+  pages   = {e0200699},
+  doi     = {10.1371/journal.pone.0200699},
+  pmid    = {30048465},
+  pmcid   = {PMC6061985}
+}
+
+@inproceedings{wiese-etal-2017-neural,
+  title     = {Neural Domain Adaptation for Biomedical Question Answering},
+  author    = {Wiese, Georg  and
+               Weissenborn, Dirk  and
+               Neves, Mariana},
+  editor    = {Levy, Roger  and
+               Specia, Lucia},
+  booktitle = {Proceedings of the 21st Conference on Computational Natural Language Learning ({C}o{NLL} 2017)},
+  month     = aug,
+  year      = {2017},
+  address   = {Vancouver, Canada},
+  publisher = {Association for Computational Linguistics},
+  url       = {https://aclanthology.org/K17-1029},
+  doi       = {10.18653/v1/K17-1029},
+  pages     = {281--289},
+  abstract  = {Factoid question answering (QA) has recently benefited from the development of deep learning (DL) systems. Neural network models outperform traditional approaches in domains where large datasets exist, such as SQuAD (ca. 100,000 questions) for Wikipedia articles. However, these systems have not yet been applied to QA in more specific domains, such as biomedicine, because datasets are generally too small to train a DL system from scratch. For example, the BioASQ dataset for biomedical QA comprises less then 900 factoid (single answer) and list (multiple answers) QA instances. In this work, we adapt a neural QA system trained on a large open-domain dataset (SQuAD, source) to a biomedical dataset (BioASQ, target) by employing various transfer learning techniques. Our network architecture is based on a state-of-the-art QA system, extended with biomedical word embeddings and a novel mechanism to answer list questions. In contrast to existing biomedical QA systems, our system does not rely on domain-specific ontologies, parsers or entity taggers, which are expensive to create. Despite this fact, our systems achieve state-of-the-art results on factoid questions and competitive results on list questions.}
+}
+@inproceedings{Pyysalo2013,
+  title     = {Distributional semantics resources for biomedical text processing},
+  author    = {Pyysalo, S. et al.},
+  year      = {2013},
+  booktitle = {Proceedings of the 5th International Symposium on Languages in Biology and Medicine},
+  address   = {Tokyo, Japan},
+  pages     = {39--43},
+  url       = {https://academic.oup.com/bioinformatics/article/33/14/i37/3953940}
+}
+
+@article{Boadu2024,
+  author  = {Boadu, F and Cheng, J},
+  title   = {Improving protein function prediction by learning and integrating representations of protein sequences and function labels},
+  journal = {Bioinformatics Advances},
+  year    = {2024},
+  volume  = {4},
+  issue   = {1},
+  pages   = {vbae120},
+  doi     = {10.1093/bioadv/vbae120},
+  pmid    = {39233898},
+  pmcid   = {PMC11374024}
+}
+
+@article{Nastou2024,
+  title      = {Improving dictionary-based named entity recognition with deep learning},
+  author     = {Nastou, K and Koutrouli, M and Pyysalo, S and Jensen, LJ},
+  journal    = {Bioinformatics},
+  year       = {2024},
+  volume     = {40},
+  supplement = {Suppl 2},
+  pages      = {ii45--ii52},
+  doi        = {10.1093/bioinformatics/btae402},
+  pmid       = {39230709},
+  pmc        = {PMC11373323}
+}
+
+@inproceedings{kwon2024odd,
+  title     = {ODD: A Benchmark Dataset for the Natural Language Processing Based Opioid Related Aberrant Behavior Detection},
+  author    = {Kwon, 
+               S and Wang, X and Liu, W and Druhl, E and Sung, ML and Reisman, JI and Li, W and Kerns, RD and Becker, W and Yu, H},
+  booktitle = {Proc Conf.},
+  year      = {2024},
+  pages     = {4338--4359},
+  pmid      = {39224833},
+  pmcid     = {PMC11368170}
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
