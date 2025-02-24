@@ -19,11 +19,13 @@ Die Gemini API ist in verschiedene Task API's aufgeteilt. Aktuell sind dies \cit
     \item PromptApi \footnote{Unser Plugin stützt sich letzlich auf die PromptApi, auch wenn wir zwischendurch die anderen API's ausprobiert haben.}
 \end{itemize} 
 
-Um diese API's nutzen zu können sollte man dem Origin Trial beiteten. Dies geht über \cite{gemini-nano-origin-trial}. Hier erhiehlten wir die jeweils neuesten Informationen via Email. Dies war notwendig, da die öffentlich zugängliche Dokumentation seit längerer Zeit nicht mehr aktuell ist (Stand 04.02.2025).
+\subsection{Dokumentation von Gemini Nano}
+
+Um die oben genannten API's nutzen zu können sollte man dem Origin Trial beiteten. Dies ging über \cite{gemini-nano-origin-trial}. Hier erhiehlten wir die jeweils neuesten Informationen via Email. Dies war notwendig, da die eigentliche Dokumentation \cite{old-doku-language-detection-api, old-doku-translation-api,old-doku-summarization-api,old-doku-writer-api,old-doku-prompt-api} seit längerer Zeit nicht mehr aktuell ist (Stand 04.02.2025). Inzwischen gibt es zwar über \cite{gemini-nano-build-in-ai} eine neue öffentlich zugängliche Dokumentation, allerdings ist diese ebenfalls nicht vollständig.
 
 \subsection{Notwendige Voraussetzungen}
 
-Um Gemini Nano in Chrome Canary nutzen zu können müssen mehrere Flags gesetzt werden. Dazu gibt man in der Adresszeile \textbf{chrome://flags} ein. Dort müssen dan folgende Flags gesetzt werden:
+Um Gemini Nano in Chrome Canary nutzen zu können müssen mehrere Flags gesetzt werden. Dazu gibt man in der Adresszeile \textbf{chrome://flags} ein. Dort müssen dann folgende Flags gesetzt werden:
 \begin{itemize}
     \item Enables optimization guide on device --> \emph{Enabled BypassPerfRequirement}
     \item Text Safety Classifier \footnote{Wenn der Text Safety Classifier nicht ausgeschaltet ist, weigert sich Gemini Nano Texte zu verarbeiten, die nicht in Englsich sind.} --> \emph{Disabled}
@@ -34,3 +36,5 @@ Um Gemini Nano in Chrome Canary nutzen zu können müssen mehrere Flags gesetzt 
     \item Rewriter API for Gemini Nano --> \emph{Enabled}
     \item Prompt API for Gemini Nano --> \emph{Enabled}
 \end{itemize}
+
+Desweiteren sollte man danach in der Adresszeile \textbf{chrome://components/} eingeben und dann \emph{Optimization Guide On Device Model} suchen und aktualisieren.
