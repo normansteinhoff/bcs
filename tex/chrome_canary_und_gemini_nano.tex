@@ -20,3 +20,17 @@ Die Gemini API ist in verschiedene Task API's aufgeteilt. Aktuell sind dies \cit
 \end{itemize} 
 
 Um diese API's nutzen zu können sollte man dem Origin Trial beiteten. Dies geht über \cite{gemini-nano-origin-trial}. Hier erhiehlten wir die jeweils neuesten Informationen via Email. Dies war notwendig, da die öffentlich zugängliche Dokumentation seit längerer Zeit nicht mehr aktuell ist (Stand 04.02.2025).
+
+\subsection{Notwendige Voraussetzungen}
+
+Um Gemini Nano in Chrome Canary nutzen zu können müssen mehrere Flags gesetzt werden. Dazu gibt man in der Adresszeile \textbf{chrome://flags} ein. Dort müssen dan folgende Flags gesetzt werden:
+\begin{itemize}
+    \item Enables optimization guide on device --> \emph{Enabled BypassPerfRequirement}
+    \item Text Safety Classifier \footnote{Wenn der Text Safety Classifier nicht ausgeschaltet ist, weigert sich Gemini Nano Texte zu verarbeiten, die nicht in Englsich sind.} --> \emph{Disabled}
+    \item Language detection web platform API --> \emph{Enabled}
+    \item Experimental translation API --> \emph{Enabled without language pack limit}
+    \item Summarization API for Gemini Nano --> \emph{Enabled}
+    \item Writer API for Gemini Nano --> \emph{Enabled}
+    \item Rewriter API for Gemini Nano --> \emph{Enabled}
+    \item Prompt API for Gemini Nano --> \emph{Enabled}
+\end{itemize}
