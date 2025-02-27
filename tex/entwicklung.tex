@@ -79,3 +79,53 @@ Außerdem haben wir die tsconfig.json Datei so eingestellt, dass der TS-Compiler
     \caption{Architektur}
     \label{fig:Architektur}
   \end{figure}
+
+  Wir haben unsere Extension nach einem Schichten-Modell aufgebaut, welches eine Daten-, Domain-, UI- und eine Framework-Schicht enthält. Durch die Vorgabe, dass wir eine Chrome-Extension erstellen sollten, gab es zusätzlich noch eine Unterteilung in Content-Script (CS) und Extension-Script (EX) \footnote{Diese Unterteilung haben wir nicht freiwillig getroffen, sondern sie ist eine Notwendigkeit in Chrome-Extensions. }.
+
+  \subsubsection{Content-Script (CS)}
+
+  Das CS in einer Chrome-Extension hat zugriff auf die gerade angezeigte Seite. Dies bedeutet, es ist in der Lage die aktuellen Daten der Seite zu lesen und das DOM der Seite zu manipulieren. Eine der wenigen Chrome-APIs auf die man im CS zugriff hat ist \texttt{hrome.runtime.sendMessage}. Hiermit können Nachrichten an das EX gesendet und auf deren Antwort gewartet werden.
+
+  \subsubsection{Extension-Script (EX)}
+  Das EX hat follen Zugriff auf die Chrome-APIs, kann aber nicht auf die aktuelle Seite zugreifen. Es kann Listener registrieren, die auf verschiedene Events reagieren. Zum Beispiel gibt es die Events \texttt{onInstall} und \texttt{onUpdate}, aber auch das Event \texttt{onMessage} \footnote{und weitere Events}. Das letztgenannte Event ermöglicht es die vom CS gesendeten Nachrichten zu verarbeiten. Nach dem erhalt eines Events hat das EX genau 30 Sekunden Rechenzeit \footnote{Dies ist eine harte Randbedingung von Chrome}, bevor es unterbrochen wird.
+
+  \subsubsection{Data-Layer}
+
+  Zu unterst befindet sich bei uns die Data-Layer. Sie ist für das Speichern und Laden der Daten zuständig. Außerdem haben wir hier eigene Datentypen definiert und für jeden zu speichernden Datentyp haben wir ein Repository erstellt. Die Repositories dienen als Abstraktion um zu verbergen, wie und wo die Daten gespeichert werden. Mögliche denkbare Optionen wären lokal vs remote oder Key-Value-Storage vs. Database vs File.
+
+  Während unserer Evaluation der Speicher-Möglichkeiten haben wir uns folgendes überlegt:
+
+  \begin{itemize}
+    \item Wir haben nur einen User --> Es ist sehr unwahrscheinlich, dass konkurrierende Zugriffe gemanaged werden müssen.
+    \item Selbst wenn Daten überschrieben werden, ist dies egal, da sie von der KI generiert wurden. Und man diesen Vorgang im Zweifel nochmal starten kann.
+    \item Mit \texttt{chrome.storage.local} gibt es eine einfach zu nutzende API.
+    \item Wir haben keine komplexen Anfragen an den Speicher. Ein Element wird entweder ganz oder gar nicht gebraucht \footnote{Kein \texttt{select, from, where, \dots}}.
+  \end{itemize}
+  
+  Gemäß dem KISS-Prinzip \footnote{Keep It Simple Stupid} haben wir uns daher gegen die Nutzung einer Datenbank und für einen Key-Value-Storage entschieden.
+
+  \subsubsection{Domain-Layer}
+  Die zweite Schicht ist die Domain Layer. Hier werden die eigentlichen Aufgaben der Extension ausgeführt.
+
+  Die Domain-Layer bietet bei uns verschieden Service-Klassen an, über die die UI-Layer aufträge erteilen oder Daten erhalten kann. Sie befinden sich im CS. Die Service Klassen selbst verschicken und empfangen hauptsächlich Nachrichten an das EX.
+
+  Im EX wiederum befinden sich zwei Generator-Klassen. Diese dienen als Abstraktion über das verwendete Sprachmodell. Die Aufgabe des Infogenerators besteht darin die statischen Informationen wie Zusammenfassung, Todos oder Termine zu generieren, während der ChatResponse-Generator sich um die antworten des Chatbots kümmert.
+
+  Das zentrale Interface unser Extension ist das LanguageModel. Es stellt folgende Methoden bereit:
+
+  \begin{itemize}
+    \item modelName(): Promise<string>
+    \item setSystemPrompt(systemPrompt: string): Promise<void>
+    \item releaseResources(): Promise<void>;
+    \item generate(prompt: string;): Promise<string | undefined>;
+    \item maxTokens(): Promise<number>;
+    \item countTokens(prompt: string): Promise<number>;
+  \end{itemize}
+
+  Die Methode \texttt{setSystemPrompt} bereitet das Sprachmodell auf seine Aufgabe vor. Die Methode \texttt{generate} generiert die eigentliche Antwort des Sprachmodells.
+
+  Die Methoden \texttt{maxTokens} und \texttt{countTokens} sind wichtig um die Länge der Eingabe zu überprüfen, da die meisten Sprachmodelle nur eine begrenzte Menge \footnote{Diese Menge wird in Tokens gemessen. Wir überlassen diese Messung jeweils dem verwendeten Sprachmodell} an Daten verarbeiten können.
+
+  Im Fall von Gemini Nano ist die Methode \texttt{releaseResources} wichtig, da Gemini Nano immer nur von einem Benutzer verwendet werden kann.
+
+  Wir haben in unserer Extension zwei Implementierungen des LanguageModel-Interface. Diese sind ChromeGeminiNano und OpenRouter. OpenRouter ist unsere Wahl um das Remote Modell zu implementieren. Hier werden Http Aufrufe an den Server von Open Router getätigt. Wir übergeben dabei mehere Parameter wie zum Beispiel das zu gewünschte Sprachmodell und den Prompt und warten dann auf die Antwort des Servers.
