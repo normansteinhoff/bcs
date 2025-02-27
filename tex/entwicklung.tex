@@ -128,4 +128,16 @@ Außerdem haben wir die tsconfig.json Datei so eingestellt, dass der TS-Compiler
 
   Im Fall von Gemini Nano ist die Methode \texttt{releaseResources} wichtig, da Gemini Nano immer nur von einem Benutzer verwendet werden kann.
 
-  Wir haben in unserer Extension zwei Implementierungen des LanguageModel-Interface. Diese sind ChromeGeminiNano und OpenRouter. OpenRouter ist unsere Wahl um das Remote Modell zu implementieren. Hier werden Http Aufrufe an den Server von Open Router getätigt. Wir übergeben dabei mehere Parameter wie zum Beispiel das zu gewünschte Sprachmodell und den Prompt und warten dann auf die Antwort des Servers.
+  Wir haben in unserer Extension zwei Implementierungen des LanguageModel-Interface. Diese sind ChromeGeminiNano und OpenRouter. OpenRouter ist unsere Wahl um das Remote Modell zu implementieren. Hier werden Http Aufrufe an den Server von Open Router getätigt. Wir übergeben dabei mehere Parameter wie zum Beispiel das gewünschte Sprachmodell und den Prompt und warten dann auf die Antwort des Servers.
+
+  Generell ist unsere Extension so aufgebaut, dass überall nur das Interface LanguageModell verwendet wird. Das heißt außer zum Zeitpunkt der Auswahl des konkreten LanguageModell weiß unsere Extension nie, welches Sprachmodell sie verwendet \footnote{\dots und damit auch nicht, ob die Verarbeitung lokal oder remote erfolgt}. Dies vereinheitlicht und vereinfacht die Verarbeitung der Prompts.
+
+  \subsubsection{UI-Layer}
+
+  In der UI-Layer haben wir die eine strenge Trennung zwischen der Anzeige und der Auswahl der Daten getroffen. Unsere View-Klassen zeigen lediglich Daten an, die an sie übergeben wurden und detektieren Events wie zum Beispiel Clicks. Für die Auswahl der anzuzeigenden Daten, sowie die Reaktion auf die detektierten Events sind unsere ViewController-Klassen zuständig.
+
+  Die ViewController halten außerdem Referenzen auf die Service-Klassen der Domain-Layer. Sie sind  aber lediglich für die Auswahl der Service-Methoden zuständig und geben den Service-Klassen Aufträge.
+
+  \subsubsection{Framework-Layer}
+
+  Als oberste Schicht unser Architektur haben wir eien Framework-Layer eingefügt.
