@@ -134,10 +134,21 @@ Außerdem haben wir die tsconfig.json Datei so eingestellt, dass der TS-Compiler
 
   \subsubsection{UI-Layer}
 
-  In der UI-Layer haben wir die eine strenge Trennung zwischen der Anzeige und der Auswahl der Daten getroffen. Unsere View-Klassen zeigen lediglich Daten an, die an sie übergeben wurden und detektieren Events wie zum Beispiel Clicks. Für die Auswahl der anzuzeigenden Daten, sowie die Reaktion auf die detektierten Events sind unsere ViewController-Klassen zuständig.
+  In der UI-Layer haben wir eine strenge Trennung zwischen der Anzeige und der Auswahl der Daten getroffen. Unsere View-Klassen zeigen lediglich Daten an, die an sie übergeben wurden und detektieren Events wie zum Beispiel Clicks. Für die Auswahl der anzuzeigenden Daten, sowie die Reaktion auf die detektierten Events sind unsere ViewController-Klassen zuständig. Die ViewController halten außerdem Referenzen auf die Service-Klassen der Domain-Layer. Sie sind  aber lediglich für die Auswahl der Service-Methoden zuständig und geben den Service-Klassen Aufträge.
 
-  Die ViewController halten außerdem Referenzen auf die Service-Klassen der Domain-Layer. Sie sind  aber lediglich für die Auswahl der Service-Methoden zuständig und geben den Service-Klassen Aufträge.
+  Unser UI besteht im Wesentlichen aus drei Teilen:
+  \begin{itemize}
+    \item InfoBoxen --> zeigen statische Informationen an
+    \item Chatbot --> beantwortet Fragen des Nutzers
+    \item Settings --> verschiedene Einstellmöglichkeiten
+  \end{itemize}
+
+  Die InfoBoxen und die Settings orientieren sich am Design von Projektron BCS. Beim Chatbot haben wir ein eigenes Design gewählt.
 
   \subsubsection{Framework-Layer}
 
-  Als oberste Schicht unser Architektur haben wir eien Framework-Layer eingefügt.
+  Als oberste Schicht unser Architektur haben wir eien Framework-Layer eingefügt. In dieser Schicht befinden sich die \texttt{main}-Funktionen des CS und des EX, sowie jeweils eine Klasse die für Dependency Injection (DI) zuständig ist \footnote{Soweit das in Typescript möglich ist. Eigentlich würde man für so etwas Reflection benutzen, was es in Typescript aber nicht zur Laufzeit gibt.}.
+  
+  Die DI-Klasse hat für jeden Datentyp mindestens eine Funktion, welche ein Objekt dieses Typs erzeugt. Dies ist die einzige Stell im Code, an der wir Objekte erzeugen. Zur Erzeugung von Objekten ist zu sagen, das wir an keiner Stelle Vererbung benutzt haben und stattdessen vollständig auf Komposition gesetzt haben. Dies bedeutet \footnote{Mit Ausnahme der Interfaces natürlich}, dass keine Klasse eine IST-EIN Beziehung sonder stattdessen (viele) HAT-EIN Bezihung(en) aufweist. In den DI klassen werden diese Objekte daher zusammengesetzt.
+
+  Die Kommunikation zwischen CS und EX haben wir auch in dieser Schicht angesiedelt. Dazu haben wir einen Messenger (zum Senden) und MessageHandler (zum Empfangen und Behandeln) von Nachrichten erstellt.
